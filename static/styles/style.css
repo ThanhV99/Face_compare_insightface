@@ -1,0 +1,23 @@
+.main-input {
+    box-shadow: 5px 5px 5px 5px rgb(0 0 0 / 10%);
+}
+
+.main-result{
+    box-shadow: 5px 5px 5px 5px rgb(0 0 0 / 10%);
+}
+
+.div-input{
+    display: flex;
+}
+
+.face1{
+    width: 50%;
+}
+
+.face2{
+    width: 50%;
+}
+
+.result-div{
+    text-align: center;
+}

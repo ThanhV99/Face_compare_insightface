@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Face</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align:center;">Compare face</h1>
+        <div class="main-input">
+            <div class="col-md-12 col-lg-12">
+            <form action="{{ url_for('detect') }}" method="post" class="form-signin text-center" enctype=multipart/form-data>
+                <div class="div-input">
+                    <div class="face1">
+                        <p>Face 1</p>
+                        <input type="file" name="face1" class="form-upload-file" id="inputfile1">
+                    </div>
+                    <br>
+                    <div class="face2">
+                        <p>Face 2</p>
+                        <input type="file" name="face2" class="form-upload-file" id="inputfile2">
+                    </div>   
+                </div>
+                <button type="submit" class="btn btn-primary">Compare two images</button>   
+            </form>
+            <br>
+            </div>
+        </div>
+        {% if result %}
+        <br>
+        <div class="main-result">
+            <div class="result-div">
+               <p><strong>{{result}}</strong></p>
+               <img class="img-responsive" src="data:image/png;base64, {{images}}">
+            </div>
+        </div>
+        {% endif %}
+    </div> 
+</body>
+</html>
