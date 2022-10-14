@@ -1,4 +1,11 @@
 # python 3.8.13
+''' 
+error install insightface in ubuntu/linux mint
+    sudo apt-get update
+    sudo apt-get install --reinstall build-essential
+docker add in Dockerfile
+    RUN apk add build-base
+'''
 numpy>=1.22.3
 Cython>=0.29.28
 cmake>=3.22.3    
